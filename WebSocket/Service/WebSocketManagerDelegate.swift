@@ -44,7 +44,7 @@ class WebSocketManager: NSObject, URLSessionWebSocketDelegate {
         sendStompSubscribe()
         
         // Send join message
-        sendJoinMessage()
+        connectUser()
         
         receiveMessage()
     }
@@ -71,7 +71,7 @@ class WebSocketManager: NSObject, URLSessionWebSocketDelegate {
         sendRawMessage(subscribeFrame)
     }
     
-    private func sendJoinMessage() {
+    private func connectUser() {
         guard let userID = self.userID else { return }
         let joinMessage = """
         SEND

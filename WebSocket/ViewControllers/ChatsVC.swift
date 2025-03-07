@@ -36,7 +36,7 @@ class ChatsVC: UIViewController, UITableViewDelegate, UITableViewDataSource, Web
         super.viewDidLoad()
         self.view.backgroundColor = .black
         setupViews()
-        
+
         // Get username from UserDefaults and connect to WebSocket
         self.username = UserDefaults.standard.string(forKey: "userID") ?? "Guest"
         WebSocketManager.shared.delegate = self
@@ -77,11 +77,20 @@ class ChatsVC: UIViewController, UITableViewDelegate, UITableViewDataSource, Web
         self.view.endEditing(true)
     }
 
+    //MARK: GET NEW MESSAGE DELEGATE
     func didReceiveMessage(_ message: String) {
         DispatchQueue.main.async {
             self.messages.append(message)
             self.tableView.reloadData()
             self.scrollToBottom()
+            
+            if let username = UserDefaults.standard.string(forKey: "userID") {
+                if message.contains(username) {
+                    print("This meesage is written by logged User")
+                } else {
+                    print("This meesage is not written by logged User")
+                }
+            }
         }
     }
 
@@ -117,7 +126,7 @@ class ChatsVC: UIViewController, UITableViewDelegate, UITableViewDataSource, Web
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         cell.textLabel?.text = messages[indexPath.row]
         cell.backgroundColor = .black
-        cell.textLabel?.textColor = .white
+        cell.textLabel?.textColor = .myRed
         return cell
     }
 }
