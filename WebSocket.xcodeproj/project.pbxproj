@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F40CEFCB2D7C8E770074C034 /* MessageKit in Frameworks */ = {isa = PBXBuildFile; productRef = F40CEFCA2D7C8E770074C034 /* MessageKit */; };
 		F4EE0D762D5595030003468B /* Starscream in Frameworks */ = {isa = PBXBuildFile; productRef = F4EE0D752D5595030003468B /* Starscream */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +42,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F4EE0D762D5595030003468B /* Starscream in Frameworks */,
+				F40CEFCB2D7C8E770074C034 /* MessageKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,6 +86,7 @@
 			name = WebSocket;
 			packageProductDependencies = (
 				F4EE0D752D5595030003468B /* Starscream */,
+				F40CEFCA2D7C8E770074C034 /* MessageKit */,
 			);
 			productName = WebSocket;
 			productReference = F4EE0D472D51A8060003468B /* WebSocket.app */;
@@ -115,6 +118,7 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				F4EE0D742D5595030003468B /* XCRemoteSwiftPackageReference "Starscream" */,
+				F40CEFC92D7C8E770074C034 /* XCRemoteSwiftPackageReference "MessageKit" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = F4EE0D482D51A8060003468B /* Products */;
@@ -344,6 +348,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		F40CEFC92D7C8E770074C034 /* XCRemoteSwiftPackageReference "MessageKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/MessageKit/MessageKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 		F4EE0D742D5595030003468B /* XCRemoteSwiftPackageReference "Starscream" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/daltoniam/Starscream";
@@ -355,6 +367,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		F40CEFCA2D7C8E770074C034 /* MessageKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F40CEFC92D7C8E770074C034 /* XCRemoteSwiftPackageReference "MessageKit" */;
+			productName = MessageKit;
+		};
 		F4EE0D752D5595030003468B /* Starscream */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = F4EE0D742D5595030003468B /* XCRemoteSwiftPackageReference "Starscream" */;

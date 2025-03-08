@@ -1,6 +1,24 @@
 {
-  "originHash" : "95d26df518f25802c8782300581011b8eafe521f7ab32e3995e57dccf6e16b58",
+  "originHash" : "ec6e255880c628fbf74a618dbc53eeb0169c80713887e59e78effaa33c0164b9",
   "pins" : [
+    {
+      "identity" : "inputbaraccessoryview",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/nathantannar4/InputBarAccessoryView",
+      "state" : {
+        "revision" : "dfdc822b0d4a0d1b5777100347c399069e9bfc62",
+        "version" : "7.0.0"
+      }
+    },
+    {
+      "identity" : "messagekit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/MessageKit/MessageKit",
+      "state" : {
+        "revision" : "dc48356f830d40de5acc0e126a44257d0a1329b6",
+        "version" : "5.0.0"
+      }
+    },
     {
       "identity" : "starscream",
       "kind" : "remoteSourceControl",

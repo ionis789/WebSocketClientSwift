@@ -4,6 +4,7 @@ class ChatsVC: UIViewController, UITableViewDelegate, UITableViewDataSource, Web
 
     private var messages: [String] = []
     private var username: String? // This is never initialized in your original code
+    private var messageColor: UIColor = .white
 
     private lazy var tableView: UITableView = {
         let v = UITableView()
@@ -83,12 +84,14 @@ class ChatsVC: UIViewController, UITableViewDelegate, UITableViewDataSource, Web
             self.messages.append(message)
             self.tableView.reloadData()
             self.scrollToBottom()
-            
+
             if let username = UserDefaults.standard.string(forKey: "userID") {
                 if message.contains(username) {
                     print("This meesage is written by logged User")
+                    self.messageColor = .myRed
                 } else {
                     print("This meesage is not written by logged User")
+                    self.messageColor = .white
                 }
             }
         }
@@ -126,7 +129,7 @@ class ChatsVC: UIViewController, UITableViewDelegate, UITableViewDataSource, Web
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         cell.textLabel?.text = messages[indexPath.row]
         cell.backgroundColor = .black
-        cell.textLabel?.textColor = .myRed
+        cell.textLabel?.textColor = messageColor
         return cell
     }
 }
